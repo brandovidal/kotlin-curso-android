@@ -111,7 +111,6 @@ output.json
 *.sig
 
 pkg/
-src/
 
 ### Kotlin ###
 # Compiled class file
