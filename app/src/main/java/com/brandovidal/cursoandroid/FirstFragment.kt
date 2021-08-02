@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
 import androidx.fragment.app.setFragmentResultListener
+import androidx.navigation.fragment.findNavController
 
 class FirstFragment : Fragment(R.layout.fragment_first) {
 
@@ -21,10 +23,8 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         }
 
         button.setOnClickListener {
-            requireActivity().supportFragmentManager.commit {
-                replace(R.id.fragment_container_view, SecondFragment.newInstance("Brando", 25))
-                addToBackStack("firstFragment")
-            }
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment("Brando Vidal", 25)
+            findNavController().navigate(action)
         }
     }
 }

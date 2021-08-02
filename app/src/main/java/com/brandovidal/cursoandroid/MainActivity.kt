@@ -12,12 +12,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        // inflate fragment
-        supportFragmentManager.commit {
-            setReorderingAllowed(true)
-            add(R.id.fragment_container_view, FirstFragment())
-        }
     }
 
 }

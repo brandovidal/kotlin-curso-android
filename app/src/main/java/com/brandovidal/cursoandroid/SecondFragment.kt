@@ -6,17 +6,20 @@ import android.view.View
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
+import androidx.navigation.fragment.navArgs
 
 class SecondFragment : Fragment(R.layout.fragment_second) {
 
     private var name: String? =""
     private var age: Int? = 0
+    private val args: SecondFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        name = requireArguments().getString(MY_NAME)
-        age = requireArguments().getInt(MY_AGE)
+        // Use Args
+        name = args.name
+        age = args.age
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,8 +37,8 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
     }
 
     companion object {
-        private const val MY_NAME = "Brando"
-        private const val MY_AGE = "25"
+        private const val MY_NAME = "name"
+        private const val MY_AGE = "age"
 
         fun newInstance(name: String, age: Int) = SecondFragment().apply {
             arguments = bundleOf(MY_NAME to name, MY_AGE to age)
