@@ -9,11 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CursoAndroid">
-        <activity android:name=".SecondActivity"></activity>
         <activity android:name=".MainActivity">
+            <nav-graph android:value="@navigation/product_graph" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

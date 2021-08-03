@@ -1,11 +1,13 @@
 package com.brandovidal.cursoandroid
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 
 class SecondFragment : Fragment(R.layout.fragment_second) {
@@ -33,6 +35,7 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
         button.setOnClickListener {
             val result = "Resultado"
             setFragmentResult("requestKey", bundleOf("bundleKey" to result))
+            findNavController().navigate(Uri.parse("cursoandroid://card"))
         }
     }
 
