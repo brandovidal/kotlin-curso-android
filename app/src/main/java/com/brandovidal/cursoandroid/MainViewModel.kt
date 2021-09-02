@@ -1,8 +1,10 @@
 package com.brandovidal.cursoandroid
 
+import android.os.Parcelable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlinx.parcelize.Parcelize
 
 class MainViewModel: ViewModel() {
     private val user = MutableLiveData<User>()
@@ -16,4 +18,5 @@ class MainViewModel: ViewModel() {
     }
 }
 
-data class User(val name: String, val age: Int)
+@Parcelize
+data class User(val name: String, val age: Int): Parcelable
